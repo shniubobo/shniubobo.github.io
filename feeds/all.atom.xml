@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>shniubobo's Blog</title><link href="https://shniubobo.xyz/" rel="alternate"></link><link href="https://shniubobo.xyz/feeds/all.atom.xml" rel="self"></link><id>https://shniubobo.xyz/</id><updated>2020-10-01T00:00:00+08:00</updated><entry><title>Hello, world!</title><link href="https://shniubobo.xyz/article/hello-world.html" rel="alternate"></link><published>2020-10-01T00:00:00+08:00</published><updated>2020-10-01T00:00:00+08:00</updated><author><name>shniubobo</name></author><id>tag:shniubobo.xyz,2020-10-01:/article/hello-world.html</id><summary type="html">&lt;p class="first last"&gt;你好，世界！&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Hello,&amp;nbsp;world!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>shniubobo's Blog</title><link href="https://shniubobo.xyz/" rel="alternate"></link><link href="https://shniubobo.xyz/feeds/all.atom.xml" rel="self"></link><id>https://shniubobo.xyz/</id><updated>2020-10-08T00:00:00+08:00</updated><entry><title>Hello, world!</title><link href="https://shniubobo.xyz/article/hello-world.html" rel="alternate"></link><published>2020-10-01T00:00:00+08:00</published><updated>2020-10-08T00:00:00+08:00</updated><author><name>shniubobo</name></author><id>tag:shniubobo.xyz,2020-10-01:/article/hello-world.html</id><summary type="html">你好，世界！</summary><content type="html">&lt;p&gt;Hello,&amp;nbsp;world!&lt;/p&gt;
 &lt;p&gt;打算建个博客，目前只做了一些基本的配置，看上去很简陋，各种方面都还有许多需要完善之处：&lt;/p&gt;
-&lt;ul class="simple"&gt;
+&lt;ul&gt;
 &lt;li&gt;网站没有图标&lt;/li&gt;
 &lt;li&gt;缺少指向源码以及我的 Github&amp;nbsp;页面的链接&lt;/li&gt;
 &lt;li&gt;这个主题的标签和分类页面无法禁用，始终会在页面上显示相应链接&lt;/li&gt;
@@ -10,4 +9,12 @@
 &lt;/ul&gt;
 &lt;p&gt;始终没有找到一个满意的主题，打算以后自己写一个，顺便可以当做学习 &lt;span class="caps"&gt;HTML&lt;/span&gt; 和 &lt;span class="caps"&gt;CSS&lt;/span&gt;&amp;nbsp;时的练习吧。&lt;/p&gt;
 &lt;p&gt;可能会在博客发各种东西，不局限于任何一个领域，主要还是看心情吧。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;花了大半个国庆假期，终于把主题基本做好了。上张图对比下：&lt;/p&gt;
+&lt;figure&gt;
+&lt;img alt="主题前后对比" src="https://shniubobo.xyz/article/images/hello-world/1.jpg" /&gt;
+&lt;figcaption&gt;上图为换主题前，下图为换主题后&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;说是基本做好是因为现在还有很多功能不支持，例如图片没有做 lazyload（这个可能需要自己写个插件自动生成缩略图并为 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签加上 &lt;code&gt;data-src&lt;/code&gt; 属性）、没有目录（这个应该有现成的插件可以用）等，同时还有一些地方看着有些不顺眼（例如下面的许可信息）。放假一结束就有好几个 &lt;span class="caps"&gt;DDL&lt;/span&gt;，所以打算先把 &lt;span class="caps"&gt;DDL&lt;/span&gt;&amp;nbsp;赶完了再来做剩下的主题。主题完善后还会考虑做一些小修改再开源（例如右边这几个社交图标不方便用在通用的主题里）。&lt;/p&gt;
+&lt;p&gt;做主题的整个过程里踩了很多坑，也会在赶完 &lt;span class="caps"&gt;DDL&lt;/span&gt;&amp;nbsp;后写一篇文章讲一下。&lt;/p&gt;
 </content><category term="Misc"></category></entry></feed>
